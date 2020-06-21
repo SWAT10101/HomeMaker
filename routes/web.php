@@ -26,7 +26,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('register', 'Auth\RegisterController@register')->name('register');
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.form');
 
+    // Not use d yet
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset ')->name('password.update');
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 
-    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/home', 'DashboardController@index')->name('home');
 
 });
