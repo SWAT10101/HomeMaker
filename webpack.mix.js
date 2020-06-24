@@ -14,13 +14,14 @@ const mix = require('laravel-mix');
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.js',
-    'node_modules/popper/dist/umd/popper.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
-    ]
-   ,'public/js/app.js');
+    'node_modules/semantic-ui-css/semantic.min.js',
+    //'node_modules/popper/dist/umd/popper.min.js',
+    'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
+    //'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    //'node_modules/material-design-lite/material.min.js',
+], 'public/js/app.js');
 
-    mix.sass('resources/sass/app.scss', 'public/css');
+mix.sass('resources/sass/app.scss', 'public/css');
 
-    mix.setPublicPath('public');
+mix.setPublicPath('public');
 mix.setResourceRoot('../');
-
