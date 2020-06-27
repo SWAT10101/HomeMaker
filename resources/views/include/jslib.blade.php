@@ -5,4 +5,19 @@
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-@stack('scripts')
+@stack('scriptsforloginpage')
+
+<script>
+        $('.ui.sidebar')
+        .sidebar('setting', {
+                             dimPage             : false,
+                             transition          : 'overlay',
+                             mobileTransition    : 'uncover',})
+        .sidebar('attach events', '#sidemenu');
+
+    
+
+    $('.ui.dropdown').dropdown();
+
+    $('.ui.accordion').accordion({ exclusive: false });
+</script>

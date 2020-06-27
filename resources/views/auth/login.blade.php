@@ -2,7 +2,7 @@
 
 
 @if ($errors->any())
-@push('scripts')
+@push('scriptsforloginpage')
 <script type="text/javascript">
     $('.message .close') // for close alert 
         .on('click', function () {
@@ -24,6 +24,7 @@
 </script>
 @endpush
 @endif
+
 
 
 @section('content')

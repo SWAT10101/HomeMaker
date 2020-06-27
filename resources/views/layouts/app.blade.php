@@ -15,9 +15,12 @@
  </head>
 
  <body>
-     <div id="app">
-         @include('navbars.nav')
+     
+      @include('navbars.nav')
+     <div class="pusher">
+         @yield('meinmenu')
          @yield('content')
+         <p>dfgfdgfgffgffdgffdgretfgertdfgertdfgertdfgertdfgertdfgert</p>
      </div>
 
      <!-- java script file -->
