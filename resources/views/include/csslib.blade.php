@@ -8,9 +8,10 @@
     margin-top: 5rem !important;
 }
 
-.arrow-right{
-  margin-left: 14px !important;
+.p-05{
+  padding: 0.5rem;
 }
+
 
 .sidermanubt {
     	display: none !important ;

@@ -20,4 +20,5 @@
     $('.ui.dropdown').dropdown();
 
     $('.ui.accordion').accordion({ exclusive: false });
+    $('.ui.vertical.accordion').accordion({ exclusive: false });
 </script>
