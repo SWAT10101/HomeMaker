@@ -20,7 +20,6 @@
      <div class="pusher">
          @yield('meinmenu')
          @yield('content')
-         <p>dfgfdgfgffgffdgffdgretfgertdfgertdfgertdfgertdfgertdfgert</p>
      </div>
 
      <!-- java script file -->
