@@ -1,77 +1,103 @@
 @extends('layouts.app')
 
+@if ($errors->any())
+@push('scriptsforregisterpage')
+<script type="text/javascript">
+    $('.message .close') // for close alert 
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+
+    for (var i = 0; i < 2; i++) { // for animation for pointing
+        // setTimeout funaction for delay with 2500 milescound 
+        setTimeout(function () {
+            $('.pointing.prompt').transition('tada'); // <-- anmtion for pointing class
+        }, 2500 * i);
+    }
+
+
+    console.log("TEST");
+
+</script>
+@endpush
+@endif
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card mt-6">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+<div class="ui grid stackable mt-5">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <div class="four wide column"></div>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <div class="eight wide column">
+        <h3 class="ui top attached header center aligned">{{ __('Register') }}</h3>
+        <div class="ui attached segment">
+            <form class="ui form error success" method="POST" action="{{ route('register') }}">
+                @csrf
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                @if ($errors->any())
+                <div class="ui floating error message">
+                    <i class="close icon"></i>
+                    <div class="header">We had some issues</div>
+                    <ul class="list">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-            </div>
+                @endif
+                <!-- Name input -->
+                <div class="field required @error('name') error @enderror ">
+                    <label>{{ __('Name') }}</label>
+                    <input name="name" type="text" value="{{ old('name') }}" placeholder="Name" class="">
+                    @if ($errors->has('name'))
+                    <div class="ui pointing prompt label transition  visible ">@error('name') {{ $message }}@enderror
+                    </div>
+                    @endif
+                </div>
+                <!-- Email input -->
+                <div class="field required @error('email') error @enderror ">
+                    <label>{{ __('E-Mail Address') }}</label>
+                    <input name="email" type="text" value="{{ old('email') }}" placeholder="Email" class="">
+                    @if ($errors->has('email'))
+                    <div class="ui pointing prompt label transition  visible ">@error('email') {{ $message }} @enderror
+                    </div>
+                    @endif
+                </div>
+                <!-- Password input -->
+                <div class="field required @error('password') error @enderror">
+                    <label>{{ __('Password') }}</label>
+                    <input name="password" type="password" placeholder="Password">
+                    @if ($errors->has('password'))
+                    <div class="ui pointing prompt label visible ">@error('password') {{ $message }} @enderror</div>
+                    @endif
+                </div>
+                <!-- Password confirm input -->
+                <div class="field required @error('password') error @enderror">
+                    <label>{{ __('Confirm Password') }}</label>
+                    <input name="password_confirmation" type="password" placeholder="Confirm Password">
+                    @if ($errors->has('password'))
+                    <div class="ui pointing prompt label visible ">@error('password') {{ $message }} @enderror</div>
+                    @endif
+                </div>
+                <!-- submit button -->
+                <div class="extra content">
+                    <button class="ui  button" type="submit">{{ __('Register') }}</button>
+                </div>
+            </form>
+
+
         </div>
+
     </div>
+
+
+    <div class="four wide column"></div>
+
 </div>
+
+
 @endsection

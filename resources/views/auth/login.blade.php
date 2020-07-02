@@ -51,7 +51,7 @@
                         </ul>
                     </div>
                     @endif
-
+                     <!-- Email input -->
                     <div class="field required @error('email') error @enderror ">
                         <label>{{ __('E-Mail Address') }}</label>
                         <input name="email" type="text" value="{{ old('email') }}" placeholder="Email" class="">
@@ -60,6 +60,7 @@
                             @enderror</div>
                         @endif
                     </div>
+                    <!-- Password input -->
                     <div class="field required @error('password') error @enderror">
                         <label>{{ __('Password') }}</label>
                         <input name="password" type="password" placeholder="Password">
@@ -67,12 +68,14 @@
                         <div class="ui pointing prompt label visible ">@error('password') {{ $message }} @enderror</div>
                         @endif
                     </div>
+                    <!-- Check box input -->
                     <div class="field">
                         <div class="ui checkbox">
                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label>{{ __('Remember Me') }}</label>
                         </div>
                     </div>
+                    <!-- submit button -->
                     <div class="extra content">
                         <button class="ui button" type="submit">{{ __('Login') }}</button>
                     </div>

@@ -43,10 +43,10 @@
                 <!-- add New admin -->
                 <a class="item" href="{{ route('register') }}">{{ __('Register') }}</a>
                 <a class="item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form-topmenu').submit();">
                     {{ __('Logout') }}
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form-topmenu" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>

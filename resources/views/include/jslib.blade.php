@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 @stack('scriptsforloginpage')
+@stack('scriptsforregisterpage')
 
 <script>
         $('.ui.sidebar')
