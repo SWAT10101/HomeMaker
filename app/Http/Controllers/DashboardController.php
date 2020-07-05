@@ -25,4 +25,9 @@ class DashboardController extends Controller
     {
         return view('dashboard');
     }
+
+    public function test()
+    {
+        return view('workers.createwoker');
+    }
 }

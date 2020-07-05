@@ -21,7 +21,7 @@
                 <i class="dropdown icon"></i>
                 <span class="text">Workers</span>
                 <div class="menu">
-                    <div class="item">Add</div>
+                    <a class="item" href="{{ route('test') }}">Add</a>
                     <div class="item">Edit</div>
                 </div>
             </div>
@@ -111,9 +111,7 @@
                     </div>
                     <div class="content menu">
 
-                        <a class="item" href="#">
-                            Add
-                        </a>
+                    <a class="item" href="{{ route('test') }}">Add</a>
                         <a class="item" href="#">
                             Edit
                         </a>
