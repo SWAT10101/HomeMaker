@@ -25,5 +25,6 @@ mix.scripts([
 mix.sass('resources/sass/app.scss', 'public/css');
 mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts');
 
+
 mix.setPublicPath('public');
 mix.setResourceRoot('../');
