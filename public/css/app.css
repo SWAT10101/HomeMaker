@@ -38654,12 +38654,12 @@ i.icon.star.empty:before {
 
 @font-face {
     font-family: brand-icons;
-    src: url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.eot);
-    src: url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.eot) format('embedded-opentype'),
-     url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.woff2) format('woff2'), 
-     url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.woff) format('woff'),
-      url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.ttf) format('truetype'),
-       url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.svg) format('svg');
+    src: url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.eot?13db00b7a34fee4d819ab7f9838cc428);
+    src: url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.eot?13db00b7a34fee4d819ab7f9838cc428?#iefix) format('embedded-opentype'),
+     url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.woff2?e8c322de9658cbeb8a774b6624167c2c) format('woff2'), 
+     url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.woff?a046592bac8f2fd96e994733faf3858c) format('woff'),
+      url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.ttf?c5ebe0b32dc1b5cc449a76c4204d13bb) format('truetype'),
+       url(../fonts/vendor/semantic-ui-css/themes/default/brand-icons.svg?a1a749e89f578a49306ec2b055c073da#icons) format('svg');
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
