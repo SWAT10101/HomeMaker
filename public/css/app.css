@@ -6311,12 +6311,12 @@ a.ui.inverted.grey.header:hover {
  */
 @font-face {
     font-family: Icons;
-    src: url(./fonts/vendor/semantic-ui-css/themes/default/icons.eot?8e3c7f5520f5ae906c6cf6d7f3ddcd19);
-    src: url(./fonts/vendor/semantic-ui-css/themes/default/icons.eot?8e3c7f5520f5ae906c6cf6d7f3ddcd19?#iefix) format("embedded-opentype"), 
-    url(./fonts/vendor/semantic-ui-css/themes/default/icons.woff2?0ab54153eeeca0ce03978cc463b257f7) format("woff2"), 
-    url(./fonts/vendor/semantic-ui-css/themes/default/icons.woff?faff92145777a3cbaf8e7367b4807987) format("woff"), 
-    url(./fonts/vendor/semantic-ui-css/themes/default/icons.ttf?b87b9ba532ace76ae9f6edfe9f72ded2) format("truetype"), 
-    url(./fonts/vendor/semantic-ui-css/themes/default/icons.svg?962a1bf31c081691065fe333d9fa8105#icons) format("svg");
+    src: url(../fonts/vendor/semantic-ui-css/themes/default/icons.eot?8e3c7f5520f5ae906c6cf6d7f3ddcd19);
+    src: url(../fonts/vendor/semantic-ui-css/themes/default/icons.eot?8e3c7f5520f5ae906c6cf6d7f3ddcd19?#iefix) format("embedded-opentype"), 
+    url(../fonts/vendor/semantic-ui-css/themes/default/icons.woff2?0ab54153eeeca0ce03978cc463b257f7) format("woff2"), 
+    url(../fonts/vendor/semantic-ui-css/themes/default/icons.woff?faff92145777a3cbaf8e7367b4807987) format("woff"), 
+    url(../fonts/vendor/semantic-ui-css/themes/default/icons.ttf?b87b9ba532ace76ae9f6edfe9f72ded2) format("truetype"), 
+    url(../fonts/vendor/semantic-ui-css/themes/default/icons.svg?962a1bf31c081691065fe333d9fa8105#icons) format("svg");
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
