@@ -11552,12 +11552,12 @@ i.icon.youtube.play:before {
 
 @font-face {
     font-family: outline-icons;
-    src: url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.eot?701ae6abd4719e9c2ada3535a497b341);
-    src: url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.eot?701ae6abd4719e9c2ada3535a497b341?#iefix) format('embedded-opentype'),
-         url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.woff2?cd6c777f1945164224dee082abaea03a) format('woff2'),
-         url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.woff?ef60a4f6c25ef7f39f2d25a748dbecfe) format('woff'),
-         url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.ttf?ad97afd3337e8cda302d10ff5a4026b8) format('truetype'),
-         url(/fonts/vendor/semantic-ui-css/themes/default/outline-icons.svg?82f60bd0b94a1ed68b1e6e309ce2e8c3#icons) format('svg');
+    src: url(/fonts/semantic-ui-css/themes/default/outline-icons.eot?701ae6abd4719e9c2ada3535a497b341);
+    src: url(/fonts/semantic-ui-css/themes/default/outline-icons.eot?701ae6abd4719e9c2ada3535a497b341?#iefix) format('embedded-opentype'),
+         url(/fonts/semantic-ui-css/themes/default/outline-icons.woff2?cd6c777f1945164224dee082abaea03a) format('woff2'),
+         url(/fonts/semantic-ui-css/themes/default/outline-icons.woff?ef60a4f6c25ef7f39f2d25a748dbecfe) format('woff'),
+         url(/fonts/semantic-ui-css/themes/default/outline-icons.ttf?ad97afd3337e8cda302d10ff5a4026b8) format('truetype'),
+         url(/fonts/semantic-ui-css/themes/default/outline-icons.svg?82f60bd0b94a1ed68b1e6e309ce2e8c3#icons) format('svg');
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
