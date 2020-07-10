@@ -21,11 +21,10 @@ mix.scripts([
     //'node_modules/material-design-lite/material.min.js',
 ], 'public/js/app.js');
 
-mix.sass('resources/sass/app.scss', 'public/css') .options({
-    processCssUrls: true
-});
-//mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/themes/default/assets/fonts');
+mix.sass('resources/sass/app.scss', 'public/css');
+//mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/semantic-ui-css/themes/default/');
 
 
 
-//mix.setResourceRoot('../');
+mix.setResourceRoot('../');
+
