@@ -4,11 +4,10 @@
 @if ($errors->any())
 @push('scriptsforloginpage')
 <script type="text/javascript">
+
     $('.message .close') // for close alert 
         .on('click', function () {
-            $(this)
-                .closest('.message')
-                .transition('fade');
+            $(this).closest('.message').transition('fade');
         });
 
     for (var i = 0; i < 2; i++) { // for animation for pointing
