@@ -4,7 +4,6 @@
 @if ($errors->any())
 @push('scriptsforloginpage')
 <script type="text/javascript">
-
     $('.message .close') // for close alert 
         .on('click', function () {
             $(this).closest('.message').transition('fade');
@@ -33,54 +32,71 @@
     <div class="four wide column"></div>
 
     <div class="eight wide column">
-         <h3 class="ui top attached header">{{ __('Login') }}</h3>
-            <div class="ui attached segment">
-              
-                <form class="ui form error success" method="POST" action="{{ route('login') }}">
-                    @csrf
+        <h3 class="ui top attached header">{{ __('Login') }}</h3>
+        <div class="ui attached segment">
 
-                    @if ($errors->any())
-                    <div class="ui floating error message">
-                        <i class="close icon"></i>
-                        <div class="header">We had some issues</div>
-                        <ul class="list">
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+            <form class="ui form error success" method="POST" action="{{ route('login') }}">
+                @csrf
+
+                @if ($errors->any())
+                <div class="ui floating error message">
+                    <i class="close icon"></i>
+                    <div class="header">We had some issues</div>
+                    <ul class="list">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <!-- Email input -->
+                <div class="field required @error('email') error @enderror ">
+                    <label>{{ __('E-Mail Address') }}</label>
+                    <input name="email" type="text" value="{{ old('email') }}" placeholder="Email" class="">
+                    @if ($errors->has('email'))
+                    <div class="ui pointing prompt label transition  visible ">@error('email') {{ $message }}
+                        @enderror</div>
                     @endif
-                     <!-- Email input -->
-                    <div class="field required @error('email') error @enderror ">
-                        <label>{{ __('E-Mail Address') }}</label>
-                        <input name="email" type="text" value="{{ old('email') }}" placeholder="Email" class="">
-                        @if ($errors->has('email'))
-                        <div class="ui pointing prompt label transition  visible ">@error('email') {{ $message }}
-                            @enderror</div>
-                        @endif
+                </div>
+                <!-- Password input -->
+                <div class="field required @error('password') error @enderror">
+                    <label>{{ __('Password') }}</label>
+                    <input name="password" type="password" placeholder="Password">
+                    @if ($errors->has('password'))
+                    <div class="ui pointing prompt label visible ">@error('password') {{ $message }} @enderror</div>
+                    @endif
+                </div>
+                <!-- Check box input -->
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label>{{ __('Remember Me') }}</label>
                     </div>
-                    <!-- Password input -->
-                    <div class="field required @error('password') error @enderror">
-                        <label>{{ __('Password') }}</label>
-                        <input name="password" type="password" placeholder="Password">
-                        @if ($errors->has('password'))
-                        <div class="ui pointing prompt label visible ">@error('password') {{ $message }} @enderror</div>
-                        @endif
-                    </div>
-                    <!-- Check box input -->
-                    <div class="field">
-                        <div class="ui checkbox">
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label>{{ __('Remember Me') }}</label>
-                        </div>
-                    </div>
-                    <!-- submit button -->
-                    <div class="extra content">
-                        <button class="ui button" type="submit">{{ __('Login') }}</button>
-                    </div>
-                </form>
-            </div>
-    
+                </div>
+                <!-- submit button -->
+                <div class="extra content">
+                    <button class="ui button" type="submit">{{ __('Login') }}</button>
+                </div>
+
+                <i class="american sign language interpreting icon"></i>
+                <i class="assistive listening systems icon"></i>
+                <i class="audio description icon"></i>
+                <i class="blind icon"></i>
+                <i class="braille icon"></i>
+                <i class="closed captioning icon"></i>
+                <i class="closed captioning outline icon"></i>
+                <i class="deaf icon"></i>
+                <i class="low vision icon"></i>
+                <i class="phone volume icon"></i>
+                <i class="question circle icon"></i>
+                <i class="question circle outline icon"></i>
+                <i class="sign language icon"></i>
+                <i class="tty icon"></i>
+                <i class="universal access icon"></i>
+                <i class="wheelchair icon"></i>
+            </form>
+        </div>
+
 
     </div>
 
