@@ -1,7 +1,7 @@
-node_modules/*
+/node_modules/*
 
 # Not  ignoring directories
-!node_modules/laravel-mix/src/builder
+!/node_modules/laravel-mix/src
 
 
 /public/hot
