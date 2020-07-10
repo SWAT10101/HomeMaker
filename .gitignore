@@ -1,8 +1,6 @@
-/node_modules/*
-
 # Not  ignoring directories
 !/node_modules/laravel-mix/src
-
+/node_modules/*
 
 /public/hot
 /public/storage
