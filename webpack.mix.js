@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.setPublicPath('public/');
+//mix.setPublicPath('public/');
 mix.scripts([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/semantic-ui-css/semantic.min.js',
@@ -19,10 +19,12 @@ mix.scripts([
     //'node_modules/popper/dist/umd/popper.min.js',
     //'node_modules/bootstrap/dist/js/bootstrap.min.js',
     //'node_modules/material-design-lite/material.min.js',
-], 'js/app.js');
+], 'public/js/app.js');
 
-mix.sass('resources/sass/app.scss', 'css');
-//mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/semantic-ui-css/themes/default');
+mix.sass('resources/sass/app.scss', 'public/css') .options({
+    processCssUrls: true
+});
+//mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/themes/default/assets/fonts');
 
 
 
