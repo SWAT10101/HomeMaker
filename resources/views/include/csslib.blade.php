@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 <!-- Styles -->
-<link href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css') }}" rel="stylesheet">
+<link href="{{ asset('https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css') }}" rel="stylesheet">
 
 
 <style>
