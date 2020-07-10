@@ -1,4 +1,9 @@
-node_modules
+node_modules/*
+
+# Not  ignoring directories
+!node_modules/laravel-mix/src/builder
+
+
 /public/hot
 /public/storage
 /storage/*.key
