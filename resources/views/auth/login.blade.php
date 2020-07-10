@@ -27,6 +27,8 @@
 
 @section('content')
 
+phpinfo();
+
 <div class="ui grid stackable mt-5">
 
     <div class="four wide column"></div>
