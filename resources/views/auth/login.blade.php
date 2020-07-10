@@ -27,7 +27,7 @@
 
 @section('content')
 
-phpinfo();
+<?php phpivfo(); ?>
 
 <div class="ui grid stackable mt-5">
 
