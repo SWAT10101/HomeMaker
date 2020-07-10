@@ -22,8 +22,8 @@ mix.scripts([
 ], 'public/js/app.js');
 
 mix.sass('resources/sass/app.scss', 'public/css');
-mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/vendor/semantic-ui-css/themes/default');
+//mix.copyDirectory('node_modules/semantic-ui-css/themes/default/assets/fonts', 'public/fonts/semantic-ui-css/themes/default');
 
 
 mix.setPublicPath('public');
-mix.setResourceRoot('../');
+//mix.setResourceRoot('../');
