@@ -36,7 +36,7 @@ class WorkersTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = ['WorkType' => 'required|string|max:45|unique:workers_types'];
+        $rules = ['worktype' => 'required|string|max:45|unique:workers_types'];
 
         $result = Validator::make($request->all(), $rules);
 
@@ -46,7 +46,7 @@ class WorkersTypeController extends Controller
         }
 
         $worktype = new WorkersType();
-        $worktype->worktype = $request->get('WorkType');
+        $worktype->worktype = $request->get('worktype');
         $worktype->save();
         return redirect()->back()->with('success', __('Add Successfully'));
 
