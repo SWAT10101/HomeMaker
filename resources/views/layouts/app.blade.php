@@ -24,6 +24,9 @@
 
      <!-- java script file -->
      @include('include.jslib')
+
+     <!-- SweetAlert2 Message -->
+     @include('include.messages')
     
     
 

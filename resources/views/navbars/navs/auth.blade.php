@@ -12,7 +12,7 @@
                 <i class="dropdown icon"></i>
                 <span class="text">Work Type</span>
                 <div class="menu">
-                    <div class="item">Add</div>
+                    <a class="item" href="{{ route('worktype.create') }}">Add</a>
                     <div class="item">Edit</div>
                 </div>
             </div>
@@ -94,9 +94,7 @@
                         Work Type
                     </div>
                     <div class="content menu">
-                        <a class="item">
-                            Add
-                        </a>
+                        <a class="item" href="{{ route('worktype.create') }}">Add</a>
                         <a class="item">
                             Edit
                         </a>

@@ -5,8 +5,10 @@
 
 @stack('scriptsforloginpage')
 @stack('scriptsforregisterpage')
+@stack('scriptsforworktypepage')
 
 <script>
+   
         $('.ui.sidebar')
         .sidebar('setting', {
                              dimPage             : false,
@@ -20,4 +22,7 @@
 
     $('.ui.accordion').accordion({ exclusive: false });
     $('.ui.vertical.accordion').accordion({ exclusive: false });
+
+    
+
 </script>

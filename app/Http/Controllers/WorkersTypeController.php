@@ -1,0 +1,99 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\WorkersType;
+use Illuminate\Http\Request;
+use Validator;
+
+class WorkersTypeController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('workers.createworktype');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $rules = ['WorkType' => 'required|string|max:45|unique:workers_types'];
+
+        $result = Validator::make($request->all(), $rules);
+
+        if($result->fails())
+        {
+            return back()->withErrors($result)->withInput($request->all())->with('error', __('Something Wrong'));
+        }
+
+        $worktype = new WorkersType();
+        $worktype->worktype = $request->get('WorkType');
+        $worktype->save();
+        return redirect()->back()->with('success', __('Add Successfully'));
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\WorkersType  $workersType
+     * @return \Illuminate\Http\Response
+     */
+    public function show(WorkersType $workersType)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\WorkersType  $workersType
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(WorkersType $workersType)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\WorkersType  $workersType
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, WorkersType $workersType)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\WorkersType  $workersType
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(WorkersType $workersType)
+    {
+        //
+    }
+}
