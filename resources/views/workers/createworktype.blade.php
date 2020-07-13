@@ -62,7 +62,6 @@
                     @endif
                 </div>
                                  
-
                 <!-- submit button -->
                 <div class="extra content">
                     <button class="ui primary button" type="submit">{{ __('Add') }}</button>
