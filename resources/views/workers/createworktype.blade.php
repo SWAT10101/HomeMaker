@@ -43,20 +43,12 @@
                     </ul>
                 </div>
                 @endif
-
-                @if(session('success'))
-                <script>
-                   
-                </script>
-                @endif
-
-
                 <!-- Work Type input -->
-                <div class="field required @error('WorkType') error @enderror ">
+                <div class="field required @error('worktype') error @enderror ">
                     <label>{{ __('Work Type') }}</label>
-                    <input name="WorkType" type="text" value="{{ old('WorkType') }}" placeholder="Work Type">
-                    @if ($errors->has('WorkType'))
-                    <div class="ui pointing prompt label transition  visible ">@error('WorkType')
+                    <input name="worktype" type="text" value="{{ old('worktype') }}" placeholder="Work Type">
+                    @if ($errors->has('worktype'))
+                    <div class="ui pointing prompt label transition  visible ">@error('worktype')
                         {{ $message }}@enderror
                     </div>
                     @endif
