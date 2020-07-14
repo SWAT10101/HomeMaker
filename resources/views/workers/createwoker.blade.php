@@ -66,17 +66,15 @@
 
                 <!-- Work Type input -->
                 <div class="field required @error('WorkType') error @enderror">
+                    <label>{{ __('Work Type') }}</label>
                     <div class="ui selection dropdown">
                         <input type="hidden" name="WorkType">
                         <i class="dropdown icon"></i>
                         <div class="default text">Work Type</div>
                         <div class="menu">
-                            <div class="item" data-value="0">Electrician</div>
-                            <div class="item" data-value="1">painter</div>
-                            <div class="item" data-value="2">Ceramic</div>
-                            <div class="item" data-value="3">Marble</div>
-                            <div class="item" data-value="4">Decor</div>
-                            <div class="item" data-value="5">Decoration</div>
+                            @foreach($worktypes as $worktype)
+                               <div class="item" data-value="{{ $worktype->id }}">{{ $worktype->worktype }}</div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
