@@ -13,7 +13,7 @@
                 <span class="text">Work Type</span>
                 <div class="menu">
                     <a class="item" href="{{ route('worktype.create') }}">Add</a>
-                    <div class="item">Edit</div>
+                    <a class="item" href="{{ route('worktype.index') }}">Edit</a>
                 </div>
             </div>
             <!-- Workers -->
@@ -95,9 +95,7 @@
                     </div>
                     <div class="content menu">
                         <a class="item" href="{{ route('worktype.create') }}">Add</a>
-                        <a class="item">
-                            Edit
-                        </a>
+                        <a class="item" href="{{ route('worktype.index') }}">Edit</a>
                     </div>
 
                 </div>

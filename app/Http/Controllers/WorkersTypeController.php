@@ -15,7 +15,8 @@ class WorkersTypeController extends Controller
      */
     public function index()
     {
-        //
+        $workstypes = WorkersType::all();
+        return view('worktype.editworktype', ['workstypes' => $workstypes]);
     }
 
     /**
@@ -25,7 +26,7 @@ class WorkersTypeController extends Controller
      */
     public function create()
     {
-        return view('workers.createworktype');
+        return view('worktype.createworktype');
     }
 
     /**
