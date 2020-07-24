@@ -35,7 +35,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     //Work Type route
-    Route::resource('worktype', 'WorkersTypeController');
+    Route::resource('worktype', 'WorkersTypeController')->except(['edit', 'update', 'destroy']); // except the route from resource to change variable in route from workerstype to workersType
+    Route::get('worktype/{workersType}/edit', 'WorkersTypeController@edit')->name('worktype.edit');
+    Route::put('worktype/{workersType}', 'WorkersTypeController@update')->name('worktype.update');
+    Route::delete('worktype/{workersType}', 'WorkersTypeController@destroy')->name('worktype.destroy');
 
     //Workers route
     Route::resource('workers', 'WorkersController');

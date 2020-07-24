@@ -15,22 +15,19 @@
  </head>
 
  <body>
-     
-      @include('navbars.nav')
+
+     @include('navbars.nav')
      <div class="pusher">
          @yield('meinmenu')
          @yield('content')
      </div>
+
 
      <!-- java script file -->
      @include('include.jslib')
 
      <!-- SweetAlert2 Message -->
      @include('include.messages')
-    
-    
-
-
  </body>
 
  </html>

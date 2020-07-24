@@ -15,8 +15,8 @@ class WorkersTypeController extends Controller
      */
     public function index()
     {
-        $workstypes = WorkersType::all();
-        return view('worktype.editworktype', ['workstypes' => $workstypes]);
+        $workersType = WorkersType::all();
+        return view('worktype.editworktype', ['workersTypes' => $workersType]);
     }
 
     /**
@@ -37,20 +37,18 @@ class WorkersTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = ['worktype' => 'required|string|max:45|unique:workers_types'];
+        $rules = ['work_type' => 'required|string|max:45|unique:workers_types,worktype'];
 
         $result = Validator::make($request->all(), $rules);
 
-        if($result->fails())
-        {
+        if ($result->fails()) {
             return back()->withErrors($result)->withInput($request->all())->with('error', __('Something Wrong'));
         }
 
         $worktype = new WorkersType();
-        $worktype->worktype = $request->get('worktype');
+        $worktype->worktype = $request->get('work_type');
         $worktype->save();
         return redirect()->back()->with('success', __('Add Successfully'));
-
     }
 
     /**
@@ -72,7 +70,9 @@ class WorkersTypeController extends Controller
      */
     public function edit(WorkersType $workersType)
     {
-        //
+
+
+        return view('worktype.updateworktype', ['workerType' => $workersType]);
     }
 
     /**
@@ -84,7 +84,21 @@ class WorkersTypeController extends Controller
      */
     public function update(Request $request, WorkersType $workersType)
     {
-        //
+
+
+        $rules = ['work_type' => 'required|string|max:45|unique:workers_types,worktype'];
+
+        $result = Validator::make($request->all(), $rules);
+
+        if ($result->fails()) {
+
+            return back()->withErrors($result)->withInput($request->all())->with('error', __('Something Wrong'));
+        }
+
+        $worktype = WorkersType::find($workersType->id); // get the selected work type from id
+        $worktype->worktype = $request->get('work_type');
+        $worktype->save();
+        return redirect()->route('worktype.index')->with('success', __('Edit Successfully'));
     }
 
     /**
@@ -95,6 +109,11 @@ class WorkersTypeController extends Controller
      */
     public function destroy(WorkersType $workersType)
     {
-        //
+        $worktype = WorkersType::find($workersType->id); // get the selected work type from id
+        /*if($worktype)
+        {
+          $worktype->delete();
+        }*/
+        return redirect()->route('worktype.index')->with('success', __('Delete Successfully'));
     }
 }

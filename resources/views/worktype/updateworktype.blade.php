@@ -16,22 +16,38 @@
         }, 2500 * i);
     }
 
-
     console.log("Load Done");
 
 </script>
 @endpush
 @endif
 
+
+
 @section('content')
 <div class="ui grid stackable mt-5">
     <div class="four wide column"></div>
 
     <div class="eight wide column">
-        <h3 class="ui top attached header center aligned">{{ __('New Work Type') }}</h3>
+
+        <div class="ui top attached segment">
+            <a class="ui blue left corner label" href="{{ route('worktype.index')}}">
+                <i class="chevron left link icon" ></i>
+              </a>
+                <h3 class="ui margen-for-header left aligned">{{ __('Edit Work Type') }}</h3>
+
+
+
+
+        </div>
+
+
+
+
         <div class="ui attached blue segment">
-            <form class="ui form error success" method="POST" action="{{ route('worktype.store') }}">
+            <form class="ui form error success" method="POST" action="{{ route('worktype.update', $workerType) }}">
                 @csrf
+                @method('put')
 
                 @if ($errors->any())
                 <div class="ui floating error message">
@@ -47,7 +63,8 @@
                 <!-- Work Type input -->
                 <div class="field required @error('worktype') error @enderror ">
                     <label>{{ __('Work Type') }}</label>
-                    <input name="work_type" type="text" value="{{ old('worktype') }}" placeholder="Work Type">
+                    <input name="work_type" type="text" value="{{ $workerType->worktype }}" placeholder="Work Type"
+                        required>
                     @if ($errors->has('work_type'))
                     <div class="ui pointing prompt label transition visible ">@error('work_type')
                         {{ $message }}@enderror
@@ -56,7 +73,7 @@
                 </div>
                 <!-- submit button -->
                 <div class="extra content">
-                    <button class="ui primary button" type="submit">{{ __('Add') }}</button>
+                    <button class="ui primary button" type="submit">{{ __('Edit') }}</button>
                 </div>
             </form>
 

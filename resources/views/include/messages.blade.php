@@ -2,7 +2,7 @@
 <script type="text/javascript">
     const Toast = Swal.mixin({
       toast: true,
-      position: 'bottom-end',
+      position: 'top-end',
       showConfirmButton: false,
       timer: 5000,
       timerProgressBar: true,
@@ -14,6 +14,7 @@
       Toast.fire({
         icon: 'success',
         title: '{{ session("success")}}',});
+
 </script>
 
 @endif
@@ -24,7 +25,7 @@
 <script>
     const Toast = Swal.mixin({
       toast: true,
-      position: 'bottom-end',
+      position: 'top-end',
       showConfirmButton: false,
       timer: 5000,
       timerProgressBar: true,
@@ -36,5 +37,8 @@
       Toast.fire({
         icon: 'error',
         title: '{{ session("error")}}',});
+
+
+
 </script>
 @endif
