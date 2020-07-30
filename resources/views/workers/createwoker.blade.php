@@ -2,11 +2,7 @@
 
 @push('scriptsForCreateWorker')
 <script>
-    $('#WorkTypeSelection').dropdown('set selected', {
-        {
-            old('WorkType')
-        }
-    }); // To select the old value
+    $('#WorkTypeSelection').dropdown('set selected', {{old('WorkType')}}); // To select the old value
 
     $('.message .close') // for close alert
         .on('click', function () {
