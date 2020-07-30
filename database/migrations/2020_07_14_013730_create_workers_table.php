@@ -15,6 +15,11 @@ class CreateWorkersTable extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->string('last_name');
+            $table->integer('phone');
+            $table->foreignId('workers_types_id')->nullable()->constrained()->onDelete('set null');
             $table->timestamps();
         });
     }

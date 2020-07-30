@@ -48,7 +48,7 @@ class WorkersTypeController extends Controller
         $worktype = new WorkersType();
         $worktype->worktype = $request->get('work_type');
         $worktype->save();
-        return redirect()->back()->with('success', __('Add Successfully'));
+        return redirect()->route('worktype.index')->with('success', __('Add Successfully'));
     }
 
     /**
@@ -110,10 +110,10 @@ class WorkersTypeController extends Controller
     public function destroy(WorkersType $workersType)
     {
         $worktype = WorkersType::find($workersType->id); // get the selected work type from id
-        /*if($worktype)
+        if($worktype)
         {
           $worktype->delete();
-        }*/
+        }
         return redirect()->route('worktype.index')->with('success', __('Delete Successfully'));
     }
 }

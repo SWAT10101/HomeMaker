@@ -6,7 +6,7 @@
 @stack('scriptsforloginpage')
 @stack('scriptsforregisterpage')
 @stack('scriptsforworktypepage')
-@stack('scriptsForDeleteWorkTypeItem')
+@stack('scriptsForCreateWorker')
 
 <script>
 
