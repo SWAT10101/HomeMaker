@@ -1,9 +1,29 @@
 @extends('layouts.app')
 
 @push('scriptsForCreateWorker')
-  <script>
-     $('#WorkTypeSelection').dropdown('set selected', {{old('WorkType')}}); // To select the old value
-  </script>
+<script>
+    $('#WorkTypeSelection').dropdown('set selected', {
+        {
+            old('WorkType')
+        }
+    }); // To select the old value
+
+    $('.message .close') // for close alert
+        .on('click', function () {
+            $(this).closest('.message').transition('fade');
+        });
+
+    for (var i = 0; i < 2; i++) { // for animation for pointing
+        // setTimeout funaction for delay with 2500 milescound
+        setTimeout(function () {
+            $('.pointing.prompt').transition('tada'); // <-- anmtion for pointing class
+        }, 2500 * i);
+    }
+
+
+    console.log("Load Done");
+
+</script>
 @endpush
 
 
@@ -33,19 +53,18 @@
                     <label>{{ __('First Name') }}</label>
                     <input name="First_Name" type="text" value="{{ old('First_Name') }}" placeholder="First Name">
                     @if ($errors->has('First_Name'))
-                    <div class="ui pointing prompt label transition  visible ">@error('First_Name')
-                        {{ $message }}@enderror
-                    </div>
+                    <div class="ui pointing prompt label transition  visible ">@error('First_Name') {{ $message }}
+                        @enderror</div>
                     @endif
                 </div>
+
                 <!-- Middle Name input -->
                 <div class="field required @error('Middle_Name') error @enderror ">
                     <label>{{ __('Middle Name') }}</label>
                     <input name="Middle_Name" type="text" value="{{ old('Middle_Name') }}" placeholder="Middle Name">
-                    @if ($errors->has('email'))
-                    <div class="ui pointing prompt label transition  visible ">@error('Middle_Name') {{ $message }}
-                        @enderror
-                    </div>
+                    @if ($errors->has('Middle_Name'))
+                    <div class="ui pointing prompt label transition  visible ">@error('Middle_Name')
+                        {{ $message }}@enderror</div>
                     @endif
                 </div>
                 <!-- Last Name input -->
@@ -56,17 +75,18 @@
                     <div class="ui pointing prompt label visible ">@error('Last_Name') {{ $message }} @enderror</div>
                     @endif
                 </div>
+
                 <!-- Phone Number input -->
                 <div class="field required @error('Phone_Number') error @enderror">
                     <label>{{ __('Phone Number') }}</label>
                     <div class="ui right labeled input">
                         <label for="Phone_Number" class="ui label">+02</label>
-                        <input name="Phone_Number" type="number" placeholder="Phone Number"  value="{{ old('Phone_Number') }}">
-                        @if ($errors->has('Phone_Number'))
-                        <div class="ui pointing prompt label visible ">@error('Phone_Number') {{ $message }} @enderror
-                        </div>
-                        @endif
+                        <input name="Phone_Number" type="number" placeholder="Phone Number"
+                            value="{{ old('Phone_Number') }}">
                     </div>
+                    @if ($errors->has('Phone_Number'))
+                    <div class="ui pointing prompt label visible ">@error('Phone_Number') {{ $message }} @enderror</div>
+                    @endif
                 </div>
 
                 <!-- Work Type input -->
@@ -77,20 +97,15 @@
                         <i class="dropdown icon"></i>
                         <div class="default text">---</div>
                         <div class="menu">
-
                             @foreach($worktypes as $worktype)
-
-
-                                <div class="item" data-value="{{ $worktype->id }}">{{ $worktype->worktype }}</div>
-
-
+                            <div class="item" data-value="{{ $worktype->id }}">{{ $worktype->worktype }}</div>
                             @endforeach
-
-
                         </div>
                     </div>
+                    @if ($errors->has('WorkType'))
+                    <div class="ui pointing prompt label visible ">@error('WorkType') {{ $message }} @enderror</div>
+                    @endif
                 </div>
-
                 <!-- submit button -->
                 <div class="extra content">
                     <button class="ui primary button" type="submit">{{ __('Add') }}</button>
@@ -107,4 +122,3 @@
 </div>
 
 @endsection
-
