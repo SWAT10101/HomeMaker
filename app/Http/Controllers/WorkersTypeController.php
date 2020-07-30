@@ -92,7 +92,7 @@ class WorkersTypeController extends Controller
 
         if ($result->fails()) {
 
-            return back()->withErrors($result)->withInput($request->all())->with('error', __('Something Wrong'));
+            return redirect()->back()->withErrors($result)->withInput($request->all())->with('error', __('Something Wrong'));
         }
 
         $worktype = WorkersType::find($workersType->id); // get the selected work type from id

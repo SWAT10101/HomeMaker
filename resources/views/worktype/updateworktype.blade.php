@@ -32,18 +32,10 @@
 
         <div class="ui top attached segment">
             <a class="ui blue left corner label" href="{{ route('worktype.index')}}">
-                <i class="chevron left link icon" ></i>
-              </a>
-                <h3 class="ui margen-for-header left aligned">{{ __('Edit Work Type') }}</h3>
-
-
-
-
+                <i class="table link icon"></i>
+            </a>
+            <h3 class="ui margen-for-header left aligned">{{ __('Edit Work Type') }}</h3>
         </div>
-
-
-
-
         <div class="ui attached blue segment">
             <form class="ui form error success" method="POST" action="{{ route('worktype.update', $workerType) }}">
                 @csrf

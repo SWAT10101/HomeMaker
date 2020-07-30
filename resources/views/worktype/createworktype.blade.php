@@ -28,7 +28,14 @@
     <div class="four wide column"></div>
 
     <div class="eight wide column">
-        <h3 class="ui top attached header center aligned">{{ __('New Work Type') }}</h3>
+
+
+        <div class="ui top attached segment">
+            <a class="ui blue left corner label" href="{{ route('worktype.index')}}">
+                <i class="table link icon"></i>
+            </a>
+            <h3 class="ui margen-for-header left aligned">{{ __('New Work Type') }}</h3>
+        </div>
         <div class="ui attached blue segment">
             <form class="ui form error success" method="POST" action="{{ route('worktype.store') }}">
                 @csrf
